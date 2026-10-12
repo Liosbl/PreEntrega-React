@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'react'
 import Item from './Item'
 
-// Clase 08: el listado ya no usa datos "hardcodeados".
-// Los productos se piden con fetch a /productos.json (simula una API).
-// Clase 07: con la prop "soloDestacados" reutilizamos este mismo componente en Inicio.
-function ItemListContainer({ titulo, soloDestacados = false }) {
-  // 1) Estado inicial: array vacío
+function ItemListContainer({ titulo, soloDestacados = false, onAgregar }) {
   const [products, setProducts] = useState([])
   const [cargando, setCargando] = useState(true)
   const [error, setError] = useState(null)
 
-  // 2) Carga automática al montar el componente
   useEffect(() => {
     fetch('/productos.json')
       .then((respuesta) => {
@@ -20,7 +15,6 @@ function ItemListContainer({ titulo, soloDestacados = false }) {
         return respuesta.json()
       })
       .then((datos) => {
-        // 3) Actualización del estado con los datos del JSON
         if (soloDestacados) {
           setProducts(datos.filter((producto) => producto.destacado))
         } else {
@@ -43,11 +37,10 @@ function ItemListContainer({ titulo, soloDestacados = false }) {
         </p>
       )}
 
-      {/* 4) Renderizado dinámico: un Item por cada producto */}
       {!cargando && !error && (
         <div className="grilla-productos">
           {products.map((producto) => (
-            <Item key={producto.id} producto={producto} />
+            <Item key={producto.id} producto={producto} onAgregar={onAgregar} />
           ))}
         </div>
       )}

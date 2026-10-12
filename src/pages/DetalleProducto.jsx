@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import TarjetaProducto from '../comp/TarjetaProducto'
 
-// Clase 07 - Paso 3: detalle de un producto.
-// useParams lee el ":id" de la URL (por ejemplo /producto/3)
-function DetalleProducto() {
+function DetalleProducto({ onAgregar }) {
   const { id } = useParams()
   const [producto, setProducto] = useState(null)
   const [cargando, setCargando] = useState(true)
@@ -20,7 +18,6 @@ function DetalleProducto() {
         return respuesta.json()
       })
       .then((datos) => {
-        // El id de la URL es texto, por eso lo pasamos a número
         const encontrado = datos.find((p) => p.id === Number(id))
         if (!encontrado) {
           throw new Error('Ese producto no existe')
@@ -49,11 +46,11 @@ function DetalleProducto() {
       <Link to="/productos" className="volver">← Volver al catálogo</Link>
 
       <div className="detalle-grilla">
-        {/* Reutilizamos la tarjeta (sin id, así no se enlaza a sí misma) */}
         <TarjetaProducto
           imagen={producto.imagen}
           nombre={producto.nombre}
           precio={producto.precio}
+          onAgregar={() => onAgregar(producto)}
         />
 
         <div className="detalle-info">

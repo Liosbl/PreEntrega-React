@@ -1,5 +1,3 @@
-// Clase 06: formulario para cargar un producto nuevo.
-// Solo muestra el formulario: la lógica está en NewProductContainer.
 function ProductForm({ producto, handleChange, handleImagen, handleFormSubmit, loading }) {
   return (
     <form className="formulario" onSubmit={handleFormSubmit}>
@@ -44,7 +42,6 @@ function ProductForm({ producto, handleChange, handleImagen, handleFormSubmit, l
         <input type="file" accept="image/*" onChange={handleImagen} required />
       </label>
 
-      {/* Botón que cambia según "loading" (operador ternario) */}
       <button type="submit" className="boton-principal" disabled={loading}>
         {loading ? (
           <>

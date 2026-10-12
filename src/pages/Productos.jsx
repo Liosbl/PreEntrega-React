@@ -1,8 +1,7 @@
 import ItemListContainer from '../comp/ItemListContainer'
 
-// Catálogo completo: el mismo componente, pero sin filtrar
-function Productos() {
-  return <ItemListContainer titulo="Todas las plantas" />
+function Productos({ onAgregar }) {
+  return <ItemListContainer titulo="Todas las plantas" onAgregar={onAgregar} />
 }
 
 export default Productos

@@ -1,7 +1,3 @@
-/* Clase 03: estilos encapsulados SOLO para TarjetaProducto.
-   Vite convierte estos nombres de clase en nombres únicos,
-   así no chocan con otras clases del proyecto. */
-
 .tarjeta {
   display: flex;
   flex-direction: column;
@@ -72,7 +68,6 @@
   background: var(--color-musgo-oscuro);
 }
 
-/* Estrella de favoritos (Clase 04) */
 .estrella {
   width: 2.8rem;
   border-radius: 50%;

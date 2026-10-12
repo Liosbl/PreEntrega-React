@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 
-// Se muestra cuando la ruta no existe
 function NoEncontrada() {
   return (
     <section className="seccion texto-corto">

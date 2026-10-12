@@ -1,4 +1,3 @@
-// Clase 05: tarjeta de contacto que recibe los datos por props
 function TarjetaContacto({ nombre, email, puesto, foto }) {
   return (
     <article className="tarjeta-contacto">

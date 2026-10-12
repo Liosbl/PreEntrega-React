@@ -1,7 +1,5 @@
 import Directorio from './Directorio'
 
-// Clase 03: Footer con estilo.
-// Clase 05: el directorio del equipo va al principio del footer.
 function Footer() {
   return (
     <footer className="footer">

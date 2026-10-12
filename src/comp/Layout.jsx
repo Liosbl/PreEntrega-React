@@ -1,12 +1,10 @@
 import Header from './Header'
 import Footer from './Footer'
 
-// Clase 03: componente Layout.
-// Recibe "children", que es todo lo que pongamos adentro de <Layout>...</Layout>
-function Layout({ children }) {
+function Layout({ children, cantidadEnCarrito }) {
   return (
     <div className="layout">
-      <Header />
+      <Header cantidadEnCarrito={cantidadEnCarrito} />
       <main className="contenido">{children}</main>
       <Footer />
     </div>

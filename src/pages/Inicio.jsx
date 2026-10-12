@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom'
 import ItemListContainer from '../comp/ItemListContainer'
 
-// Clase 07: página de inicio ( / )
-function Inicio() {
+function Inicio({ onAgregar }) {
   return (
     <>
-      {/* Paso 1: diseño atractivo para la portada */}
       <section className="hero">
         <div className="hero-texto">
           <h1>Plantas que llegan sanas a tu casa</h1>
@@ -20,8 +18,7 @@ function Inicio() {
         <img src="/img/productos/monstera.svg" alt="Monstera en maceta" className="hero-img" />
       </section>
 
-      {/* Paso 2: productos destacados reutilizando ItemListContainer */}
-      <ItemListContainer titulo="Destacadas de la temporada" soloDestacados={true} />
+      <ItemListContainer titulo="Destacadas de la temporada" soloDestacados={true} onAgregar={onAgregar} />
     </>
   )
 }

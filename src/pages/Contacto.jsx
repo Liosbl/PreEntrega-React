@@ -1,4 +1,3 @@
-// Página de contacto simple
 function Contacto() {
   return (
     <section className="seccion texto-corto">

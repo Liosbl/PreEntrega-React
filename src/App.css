@@ -1,5 +1,3 @@
-/* Estilos generales de la estructura (layout, header, footer y páginas) */
-
 .layout {
   min-height: 100vh;
   display: flex;
@@ -14,7 +12,6 @@
   padding: 2rem 1.25rem 3rem;
 }
 
-/* ---------- HEADER ---------- */
 .header {
   background: var(--color-bosque);
   color: var(--color-papel);
@@ -66,7 +63,6 @@
   color: var(--color-tinta);
 }
 
-/* ---------- HERO (Inicio) ---------- */
 .hero {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -94,7 +90,6 @@
   border: 6px solid var(--color-papel);
 }
 
-/* ---------- SECCIONES Y GRILLAS ---------- */
 .seccion {
   margin-bottom: 2rem;
 }
@@ -105,7 +100,6 @@
   margin: 0 0 1.25rem;
 }
 
-/* Grid para las tarjetas de producto */
 .grilla-productos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -120,7 +114,6 @@
   padding-left: 1.2rem;
 }
 
-/* ---------- MENSAJES ---------- */
 .mensaje-estado {
   font-style: italic;
   color: var(--color-musgo-oscuro);
@@ -145,7 +138,6 @@
   border-radius: 6px;
 }
 
-/* ---------- BOTONES ---------- */
 .boton-principal {
   display: inline-flex;
   align-items: center;
@@ -171,7 +163,6 @@
   cursor: not-allowed;
 }
 
-/* Indicador de carga (Clase 06) */
 .spinner {
   width: 1rem;
   height: 1rem;
@@ -189,7 +180,6 @@
   .spinner { animation-duration: 2s; }
 }
 
-/* ---------- FORMULARIO ---------- */
 .carga-grilla {
   display: grid;
   grid-template-columns: minmax(280px, 400px) 1fr;
@@ -224,7 +214,6 @@
   background: #fff;
 }
 
-/* ---------- DETALLE ---------- */
 .volver {
   display: inline-block;
   margin-bottom: 1.25rem;
@@ -269,7 +258,6 @@
   margin: 0;
 }
 
-/* ---------- FOOTER Y DIRECTORIO (Clase 05) ---------- */
 .footer {
   background: var(--color-bosque);
   color: var(--color-salvia);
@@ -344,8 +332,127 @@
   margin: 0;
 }
 
-/* ---------- RESPONSIVE ---------- */
+.nav-contador {
+  display: inline-block;
+  min-width: 1.4rem;
+  margin-left: 0.4rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--color-girasol);
+  color: var(--color-tinta);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.nav a.active .nav-contador {
+  background: var(--color-bosque);
+  color: var(--color-papel);
+}
+
+.carrito-lista {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.carrito-item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto auto auto;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-papel);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+}
+
+.carrito-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carrito-datos h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.carrito-datos p {
+  margin: 0;
+  color: var(--color-musgo-oscuro);
+  font-size: 0.9rem;
+}
+
+.carrito-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.carrito-cantidad button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-borde);
+  background: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.carrito-cantidad button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.carrito-subtotal {
+  margin: 0;
+  font-weight: 700;
+  min-width: 7rem;
+  text-align: right;
+}
+
+.carrito-quitar,
+.carrito-vaciar {
+  background: none;
+  border: none;
+  color: var(--color-error);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.carrito-resumen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.carrito-total {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
 @media (max-width: 760px) {
+  .carrito-item {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .carrito-cantidad,
+  .carrito-subtotal,
+  .carrito-quitar {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+  }
+
   .hero,
   .carga-grilla,
   .detalle-grilla {
