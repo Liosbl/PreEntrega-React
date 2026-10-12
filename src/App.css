@@ -1,0 +1,363 @@
+/* Estilos generales de la estructura (layout, header, footer y páginas) */
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenido {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  background: var(--color-bosque);
+  color: var(--color-papel);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-papel);
+  text-decoration: none;
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  font-size: 1.7rem;
+}
+
+.logo-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.nav a {
+  color: var(--color-salvia);
+  text-decoration: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav a.active {
+  background: var(--color-girasol);
+  color: var(--color-tinta);
+}
+
+/* ---------- HERO (Inicio) ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  font-weight: 800;
+  margin: 0 0 1rem;
+  color: var(--color-bosque);
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 34ch;
+  margin: 0 0 1.5rem;
+}
+
+.hero-img {
+  width: 100%;
+  border-radius: 50% 50% 24px 24px;
+  border: 6px solid var(--color-papel);
+}
+
+/* ---------- SECCIONES Y GRILLAS ---------- */
+.seccion {
+  margin-bottom: 2rem;
+}
+
+.titulo-seccion {
+  font-size: 1.9rem;
+  color: var(--color-bosque);
+  margin: 0 0 1.25rem;
+}
+
+/* Grid para las tarjetas de producto */
+.grilla-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.texto-corto {
+  max-width: 60ch;
+}
+
+.lista-contacto {
+  padding-left: 1.2rem;
+}
+
+/* ---------- MENSAJES ---------- */
+.mensaje-estado {
+  font-style: italic;
+  color: var(--color-musgo-oscuro);
+}
+
+.mensaje-estado.claro {
+  color: var(--color-salvia);
+}
+
+.mensaje-error {
+  background: #FBE9E7;
+  color: var(--color-error);
+  border-left: 5px solid var(--color-error);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.mensaje-ok {
+  background: var(--color-salvia);
+  border-left: 5px solid var(--color-musgo);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+/* ---------- BOTONES ---------- */
+.boton-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--color-girasol);
+  color: var(--color-tinta);
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.4rem;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton-principal:hover {
+  filter: brightness(0.95);
+}
+
+.boton-principal:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Indicador de carga (Clase 06) */
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid var(--color-tinta);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation-duration: 2s; }
+}
+
+/* ---------- FORMULARIO ---------- */
+.carga-grilla {
+  display: grid;
+  grid-template-columns: minmax(280px, 400px) 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--color-papel);
+  padding: 1.5rem;
+  border-radius: 18px;
+  border: 1px solid var(--color-borde);
+}
+
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.formulario input,
+.formulario textarea {
+  font: inherit;
+  font-weight: 400;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* ---------- DETALLE ---------- */
+.volver {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+.detalle-grilla {
+  display: grid;
+  grid-template-columns: minmax(240px, 360px) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.detalle-info h1 {
+  font-size: 2.6rem;
+  margin: 0.2rem 0 1rem;
+  color: var(--color-bosque);
+}
+
+.detalle-categoria {
+  margin: 0;
+  color: var(--color-musgo);
+  font-weight: 600;
+}
+
+.detalle-cuidados {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.detalle-cuidados div {
+  border-top: 3px solid var(--color-musgo);
+  padding-top: 0.5rem;
+}
+
+.detalle-cuidados dt {
+  font-weight: 700;
+}
+
+.detalle-cuidados dd {
+  margin: 0;
+}
+
+/* ---------- FOOTER Y DIRECTORIO (Clase 05) ---------- */
+.footer {
+  background: var(--color-bosque);
+  color: var(--color-salvia);
+  padding: 2.5rem 1.5rem 1.25rem;
+}
+
+.directorio {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+}
+
+.directorio-titulo {
+  color: var(--color-papel);
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.grilla-contactos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta-contacto {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 0.9rem;
+}
+
+.tarjeta-contacto-foto {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tarjeta-contacto h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-papel);
+}
+
+.tarjeta-contacto-puesto {
+  margin: 0.1rem 0 0.2rem;
+  color: var(--color-girasol);
+  font-size: 0.9rem;
+}
+
+.tarjeta-contacto a {
+  color: var(--color-salvia);
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.footer-base {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-base p {
+  margin: 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 760px) {
+  .hero,
+  .carga-grilla,
+  .detalle-grilla {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-img {
+    max-width: 280px;
+    justify-self: center;
+  }
+
+  .detalle-cuidados {
+    grid-template-columns: 1fr;
+  }
+}

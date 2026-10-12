@@ -1,0 +1,6 @@
+[
+  { "id": 1, "nombre": "Lucía Fernández", "email": "lucia@raizvivero.com", "puesto": "CEO", "foto": "/img/equipo/avatar1.svg" },
+  { "id": 2, "nombre": "Martín Gómez", "email": "martin@raizvivero.com", "puesto": "Desarrollador frontend", "foto": "/img/equipo/avatar2.svg" },
+  { "id": 3, "nombre": "Sofía Ramírez", "email": "sofia@raizvivero.com", "puesto": "Diseñadora UX/UI", "foto": "/img/equipo/avatar3.svg" },
+  { "id": 4, "nombre": "Tomás Acosta", "email": "tomas@raizvivero.com", "puesto": "Encargado del vivero", "foto": "/img/equipo/avatar4.svg" }
+]

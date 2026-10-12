@@ -1,0 +1,49 @@
+/* CSS GLOBAL (Clase 03): fuentes, colores y fondo de toda la página.
+   Paleta "vivero": verde bosque, musgo, salvia y un amarillo girasol. */
+
+:root {
+  --color-bosque: #1F3D2B;
+  --color-musgo-oscuro: #3E5F2F;
+  --color-musgo: #5E7F45;
+  --color-salvia: #DDE6CF;
+  --color-fondo: #EEF2E6;
+  --color-papel: #FAFCF6;
+  --color-girasol: #E8B931;
+  --color-tinta: #1A2419;
+  --color-borde: #CCD8BC;
+  --color-error: #A3312A;
+
+  --fuente-titulos: 'Bricolage Grotesque', 'Trebuchet MS', sans-serif;
+  --fuente-texto: 'Figtree', 'Segoe UI', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-fondo);
+  color: var(--color-tinta);
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  line-height: 1.15;
+}
+
+a {
+  color: var(--color-musgo-oscuro);
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-girasol);
+  outline-offset: 2px;
+}
